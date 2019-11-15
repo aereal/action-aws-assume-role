@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "run-p -l copy-action-json compile",
-    "copy-action-json": "node scripts/compile-json.js",
+    "copy-action-json": "node scripts/compile-json.js > action.yml",
     "compile": "tsc -p .",
     "lint": "eslint --ext .ts src/**/*"
   },
