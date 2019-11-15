@@ -1,0 +1,16 @@
+{
+  "name": "AWS Assume Role Action",
+  "description": "Do sts:AssumeRole and exports access key/secret access key/session token as environment variables",
+  "runs": {
+    "using": "node12",
+    "main": "dist/index.js"
+  },
+  "inputs": {
+    "aws-role-arn": {
+      "required": true
+    },
+    "aws-role-session-name": {
+      "required": true
+    }
+  }
+}
