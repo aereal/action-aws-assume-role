@@ -5,7 +5,7 @@
   "main": "lib/dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "run-p -l compile lint",
+    "build": "run-p -l copy-action-json compile",
     "copy-action-json": "node scripts/compile-json.js",
     "compile": "tsc -p .",
     "lint": "eslint --ext .ts src/**/*"

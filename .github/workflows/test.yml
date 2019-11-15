@@ -20,5 +20,11 @@ jobs:
             ${{ runner.os }}-node-
       - name: install deps
         run: npm ci
+      - name: lint
+        uses: reviewdog/action-eslint@v1.0.0
+        with:
+          github_token: ${{ secrets.github_token }}
+          reporter: github-pr-review
+          eslint_flags: '--ext .ts src/**/*'
       - name: build
         run: npm run build
