@@ -59,7 +59,8 @@
         {
           "prefixWithI": "never"
         }
-      ]
+      ],
+      "@typescript-eslint/no-unused-vars": 0
     }
   },
   "devDependencies": {
