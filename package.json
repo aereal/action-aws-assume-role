@@ -2,7 +2,7 @@
   "name": "action-aws-assume-role",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "lib/dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "run-p -l compile lint",
@@ -67,6 +67,7 @@
     }
   },
   "devDependencies": {
+    "@types/node": "^12.12.7",
     "@typescript-eslint/eslint-plugin": "^2.7.0",
     "@typescript-eslint/parser": "^2.7.0",
     "eslint": "^6.6.0",
