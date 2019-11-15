@@ -3,7 +3,7 @@ description: Do sts:AssumeRole and exports access key/secret access key/session 
   environment variables
 runs:
   using: node12
-  main: dist/src/index.js
+  main: dist/index.js
 inputs:
   aws-role-arn:
     required: true
