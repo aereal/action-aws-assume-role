@@ -1,4 +1,4 @@
-import { exportVariable } from "@actions/core";
+import { exportVariable, setSecret } from "@actions/core";
 import { STS } from "aws-sdk";
 import { accumulateInputs } from "./inputs";
 
@@ -16,7 +16,12 @@ const exportAssumedRoleCredentials = async (req: STS.AssumeRoleRequest) => {
   if (Credentials === undefined) {
     throw new Error("No Credentials got");
   }
-  exportVariable("AWS_ACCESS_KEY_ID", Credentials.AccessKeyId);
-  exportVariable("AWS_SECRET_ACCESS_KEY", Credentials.SecretAccessKey);
-  exportVariable("AWS_SESSION_TOKEN", Credentials.SessionToken);
+  exportSecretValue("AWS_ACCESS_KEY_ID", Credentials.AccessKeyId);
+  exportSecretValue("AWS_SECRET_ACCESS_KEY", Credentials.SecretAccessKey);
+  exportSecretValue("AWS_SESSION_TOKEN", Credentials.SessionToken);
+};
+
+const exportSecretValue = (name: string, value: string): void => {
+  exportVariable(name, value);
+  setSecret(value);
 };
