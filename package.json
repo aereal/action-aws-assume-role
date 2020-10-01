@@ -80,7 +80,7 @@
     "typescript": "^3.7.2"
   },
   "dependencies": {
-    "@actions/core": "^1.2.0",
+    "@actions/core": "^1.2.6",
     "aws-sdk": "^2.572.0",
     "yaml": "^1.7.2"
   }
